@@ -51,3 +51,28 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+// QueryDsl 추가 설정
+def generated = 'src/main/generated'
+sourceSets {
+	main {
+		java {
+			srcDirs += generated
+		}
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	options.generatedSourceOutputDirectory = file(generated)
+}
+
+// gradle clean 시에 QClass 디렉토리 삭제
+clean {
+	delete file(generated)
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
