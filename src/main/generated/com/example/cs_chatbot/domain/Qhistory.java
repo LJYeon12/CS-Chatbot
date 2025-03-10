@@ -11,16 +11,16 @@ import com.querydsl.core.types.dsl.PathInits;
 
 
 /**
- * Qhistory is a Querydsl query type for history
+ * QHistory is a Querydsl query type for History
  */
 @Generated("com.querydsl.codegen.DefaultEntitySerializer")
-public class Qhistory extends EntityPathBase<History> {
+public class QHistory extends EntityPathBase<History> {
 
-    private static final long serialVersionUID = -1055307321L;
+    private static final long serialVersionUID = 609345959L;
 
     private static final PathInits INITS = PathInits.DIRECT2;
 
-    public static final Qhistory history = new Qhistory("history");
+    public static final QHistory history = new QHistory("history");
 
     public final com.example.cs_chatbot.domain.common.QBaseEntity _super = new com.example.cs_chatbot.domain.common.QBaseEntity(this);
 
@@ -42,23 +42,23 @@ public class Qhistory extends EntityPathBase<History> {
 
     public final StringPath weakness = createString("weakness");
 
-    public Qhistory(String variable) {
+    public QHistory(String variable) {
         this(History.class, forVariable(variable), INITS);
     }
 
-    public Qhistory(Path<? extends History> path) {
+    public QHistory(Path<? extends History> path) {
         this(path.getType(), path.getMetadata(), PathInits.getFor(path.getMetadata(), INITS));
     }
 
-    public Qhistory(PathMetadata metadata) {
+    public QHistory(PathMetadata metadata) {
         this(metadata, PathInits.getFor(metadata, INITS));
     }
 
-    public Qhistory(PathMetadata metadata, PathInits inits) {
+    public QHistory(PathMetadata metadata, PathInits inits) {
         this(History.class, metadata, inits);
     }
 
-    public Qhistory(Class<? extends History> type, PathMetadata metadata, PathInits inits) {
+    public QHistory(Class<? extends History> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
         this.interview = inits.isInitialized("interview") ? new QInterview(forProperty("interview"), inits.get("interview")) : null;
         this.member = inits.isInitialized("member") ? new QMember(forProperty("member")) : null;

@@ -29,13 +29,17 @@ public class QMember extends EntityPathBase<Member> {
 
     public final StringPath email = createString("email");
 
-    public final ListPath<History, Qhistory> histories = this.<History, Qhistory>createList("histories", History.class, Qhistory.class, PathInits.DIRECT2);
+    public final ListPath<History, QHistory> histories = this.<History, QHistory>createList("histories", History.class, QHistory.class, PathInits.DIRECT2);
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
     public final ListPath<Interview, QInterview> interviewList = this.<Interview, QInterview>createList("interviewList", Interview.class, QInterview.class, PathInits.DIRECT2);
 
     public final StringPath name = createString("name");
+
+    public final StringPath password = createString("password");
+
+    public final StringPath providerId = createString("providerId");
 
     public final ListPath<Recommendation, QRecommendation> recommendations = this.<Recommendation, QRecommendation>createList("recommendations", Recommendation.class, QRecommendation.class, PathInits.DIRECT2);
 
