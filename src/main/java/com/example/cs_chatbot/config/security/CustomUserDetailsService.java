@@ -1,5 +1,7 @@
 package com.example.cs_chatbot.config.security;
 
+import com.example.cs_chatbot.apiPayload.code.status.ErrorStatus;
+import com.example.cs_chatbot.apiPayload.exception.handler.MemberHandler;
 import com.example.cs_chatbot.domain.Member;
 import com.example.cs_chatbot.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
@@ -16,8 +18,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Member member = memberRepository.findByEmail(username)
-                .orElseThrow(() -> new UsernameNotFoundException("해당 이메일을 가진 유저가 존재하지 않습니다." + username));
-
+                .orElseThrow(() -> new MemberHandler(ErrorStatus.MEMBER_NOT_FOUND));
         return User
                 .withUsername(member.getEmail())
                 .password(member.getPassword())

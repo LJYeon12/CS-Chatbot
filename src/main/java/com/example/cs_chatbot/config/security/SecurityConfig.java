@@ -22,6 +22,7 @@ public class SecurityConfig {
                                 "/",
                                 "/home",
                                 "/member/signup",
+                                "/member/login",  // 로그인 페이지 경로 추가
                                 "/css/**"
                         ).permitAll()  // Swagger 관련 경로 허용
                         .anyRequest().authenticated()

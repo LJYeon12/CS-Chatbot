@@ -20,6 +20,7 @@ import java.util.List;
 public class Member extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "member_id")
     private Long id;
 
     @Column(unique = true, nullable = false)
@@ -28,6 +29,7 @@ public class Member extends BaseEntity {
     private String password;
     @Column(nullable = false)
     private String name;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private AuthProvider authProvider;
